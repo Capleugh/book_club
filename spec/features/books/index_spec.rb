@@ -26,14 +26,28 @@ RSpec.describe "As a user" do
         expect(page).to have_content(book_1.title)
         expect(page).to have_content(book_1.pages)
         expect(page).to have_content(book_1.publication_year)
-        expect(page).to have_content(book_1.authors.name)
+
+        within "#author-#{author_1.id}" do
+          expect(page).to have_content(author_1.name)
+        end
+
+        within "#author-#{author_2.id}" do
+          expect(page).to have_content(author_2.name)
+        end
       end
 
       within "#book-#{book_2.id}" do
         expect(page).to have_content(book_2.title)
         expect(page).to have_content(book_2.pages)
         expect(page).to have_content(book_2.publication_year)
-        expect(page).to have_content(book_1.authors.name)
+
+        within "#author-#{author_3.id}" do
+          expect(page).to have_content(author_3.name)
+        end
+
+        within "#author-#{author_4.id}" do
+          expect(page).to have_content(author_4.name)
+        end
       end
     end
   end

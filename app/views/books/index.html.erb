@@ -1,8 +1,12 @@
 <% @books.each do |book| %>
   <section id="book-<%= book.id %>">
-    <h1><%= book.title %></h1>
-    <p><%= book.pages %></p>
-    <p><%= book.publication_year %></p>
-    <p><%= book.authors.name %></p>
+    <h1>Title: <%= book.title %></h1>
+    <p>Length: <%= book.pages %></p>
+    <p>Publication Year: <%= book.publication_year %></p>
+    <p>Author Name(s): <% book.authors.each do |author| %></p>
+      <li id="author-<%= author.id %>">
+        <uo><%= author.name %></uo>
+      </li>
+    <% end %>
   </section>
 <% end %>
