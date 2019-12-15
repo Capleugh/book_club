@@ -5,7 +5,5 @@ Rails.application.routes.draw do
     resources :books, only: [:new, :create]
   end
 
-  get '/books', to: 'books#index'
-
-  get '/authors/:id', to: 'authors#show'
+  # do more research on the resources syntax
 end

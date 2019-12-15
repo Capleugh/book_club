@@ -22,7 +22,7 @@ RSpec.describe "As a user" do
 
       expect(current_path).to eq("/authors/#{author_1.id}")
       expect(page).to have_content(author_1.name)
-      # expect(page).to have_content(author_1.average_pages)
+      expect(page).to have_content(author_1.average_pages)
 
       within "#book-#{book_1.id}" do
         expect(page).to have_content(book_1.title)
