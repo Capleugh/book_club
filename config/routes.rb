@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :authors, only: :show do
     resources :books, only: [:new, :create]
   end
+
+  # do more research on the resources syntax
 end
